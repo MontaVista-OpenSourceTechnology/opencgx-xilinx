@@ -24,7 +24,7 @@ the build tools stored under buildtools, and sources the
 poky/oe-init-build-env script.
 
 From that point, the project should work like any other yocto based build system. So
-a command like the following will build images that you can run via qemu or on a real target.
+a command like the following will build images that you can run on a real target.
 
 ```
 cd project
@@ -32,7 +32,6 @@ or
 cd <my directory>
 source setup.sh
 bitbake core-image-minimal 
-runqemu zedboard-zynq7 nographic slirp
 ```
 
 For additional information see the yocto documentaion: https://www.yoctoproject.org/docs/
