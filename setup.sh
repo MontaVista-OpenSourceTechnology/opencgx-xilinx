@@ -50,8 +50,7 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=rock
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=rocko;layer=meta-xilinx-bsp \
 MACHINE@zedboard-zynq7 \
 DISTRO@mvista-cgx \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branch=mvl-4.14/msd.cgx;meta=MV_KERNEL \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
+CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-yocto \
 "
 #We use 2.3.3 build tools because of kenrel version limitations
 BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/
@@ -187,6 +186,11 @@ for config in $REPO_CONFIG; do
           echo "BB_HASHBASE_WHITELIST_append += \"$(echo $META)_TREE\"" >> conf/local-content.conf
           echo >> conf/local-content.conf
     fi
+    if [ "$VAR" = "CONFIG" ] ; then
+       option=$(echo $VAL | cut -d = -f 1)
+       setting=$(echo $VAL | cut -d = -f 2)
+       echo "$option ?= '$setting'" >> conf/local-content.conf
+    fi   
 done
 if [ -n "$SOURCE_MIRROR_URL" ] ; then
    if [ -z "$(echo $SOURCE_MIRROR_URL | grep "://")" ] ; then
