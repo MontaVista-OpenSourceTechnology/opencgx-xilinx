@@ -48,9 +48,11 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;bra
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=rocko;layer=meta-qa-framework \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=rocko;layer=meta-qa-testsuites \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=rocko;layer=meta-xilinx-bsp \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=rocko \
 MACHINE@zedboard-zynq7 \
 DISTRO@mvista-cgx \
-CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-yocto \
+SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branch=mvl-4.14/msd.eval.xilinx-zynq;meta=MV_KERNEL \
+SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
 "
 #We use 2.3.3 build tools because of kenrel version limitations
 BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/
