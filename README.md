@@ -5,8 +5,8 @@ Montavista Software, LLC. release of ultra96-zynqmp.
 How to use:
 ==========
 ```
-git clone --recursive https://github.com/MontaVista-OpenSourceTechnology/opencgx-xilinx-2.6
-cd opencgx-xilinx-2.6
+git clone -b dunfell --recursive https://github.com/MontaVista-OpenSourceTechnology/opencgx-xilinx
+cd opencgx-xilinx
 source setup.sh
 ```
 Optionally, you can pass setup.sh a directory name to use instead of the
@@ -39,7 +39,7 @@ poky/oe-init-build-env script.
 directory layout:
 ================
 ```
-opencgx-xilinx-2.6/
+opencgx-xilinx/
        project - bitbake project for the ultra96-zynqmp project build
        buildtools - build tools to provide minimal build requirement for poky builds
        layers - layers for building ultra96-zynqmp project
