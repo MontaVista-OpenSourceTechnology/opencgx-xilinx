@@ -14,8 +14,9 @@
 	<project name="MontaVista-OpenSourceTechnology/meta-cloud-services.git" remote="github.com" path="layers/meta-cloud-services" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgl.git" remote="github.com" path="layers/meta-montavista-cgl" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-xilinx.git" remote="github.com" path="layers/meta-xilinx" revision="dunfell"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-xilinx-tools.git" remote="github.com" path="layers/meta-xilinx-tools" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git" remote="github.com" path="layers/meta-montavista-xilinx" revision="dunfell"/>
-	<project name="MontaVista-OpenSourceTechnology/linux-mvista-3.1.git" remote="github.com" path="sources/linux-mvista-3.1" revision="mvl-5.4/msd.cgx"/>
+	<project name="MontaVista-OpenSourceTechnology/linux-mvista.git" remote="github.com" path="sources/linux-mvista" revision="mvl-5.4/msd.cgx"/>
 	<project name="MontaVista-OpenSourceTechnology/yocto-kernel-cache.git" remote="github.com" path="sources/yocto-kernel-cache" revision="yocto-5.4"/>
 	<project name="MontaVista-OpenSourceTechnology/opencgx-xilinx" remote="github.com" path="." revision="dunfell"/>
 </manifest>

@@ -53,8 +53,12 @@
 [submodule "layers/meta-xilinx"]
 	path = layers/meta-xilinx
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git
-	branch = dunfell
+	branch = dunfell 
 [submodule "layers/meta-montavista-xilinx"]
 	path = layers/meta-montavista-xilinx
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git
+	branch = dunfell
+[submodule "layers/meta-xilinx-tools"]
+	path = layers/meta-xilinx-tools
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git
 	branch = dunfell

@@ -53,10 +53,11 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=dunfell;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl.git;branch=dunfell \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=dunfell;layer=meta-xilinx-bsp \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git;branch=dunfell \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=dunfell \
 MACHINE@ultra96-zynqmp \
 DISTRO@mvista-cgx \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-3.1.git;branch=mvl-5.4/msd.cgx;meta=MV_KERNEL \
+SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista.git;branch=mvl-5.4/msd.cgx;meta=MV_KERNEL \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git;branch=yocto-5.4;meta=MV_KERNELCACHE \
 "
 TOPDIR=$(dirname $THIS_SCRIPT)
