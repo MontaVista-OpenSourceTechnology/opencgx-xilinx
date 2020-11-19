@@ -1,6 +1,6 @@
-[submodule "sources/linux-mvista-3.1"]
-	path = sources/linux-mvista-3.1
-	url = https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-3.1.git
+[submodule "sources/linux-mvista"]
+	path = sources/linux-mvista
+	url = https://github.com/MontaVista-OpenSourceTechnology/linux-mvista
 	branch = mvl-5.4/msd.cgx
 [submodule "sources/yocto-kernel-cache"]
 	path = sources/yocto-kernel-cache
