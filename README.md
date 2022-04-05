@@ -1,6 +1,6 @@
-# Release repository for ultra96-zynqmp
+# Release repository for qemu-zynq7
 
-Montavista Software, LLC. release of ultra96-zynqmp. 
+Montavista Software, LLC. release of qemu-zynq7. 
 
 How to use:
 ==========
@@ -40,11 +40,11 @@ directory layout:
 ================
 ```
 opencgx-xilinx/
-       project - bitbake project for the ultra96-zynqmp project build
+       project - bitbake project for the qemu-zynq7 project build
        buildtools - build tools to provide minimal build requirement for poky builds
-       layers - layers for building ultra96-zynqmp project
+       layers - layers for building qemu-zynq7 project
        setup.sh - project setup script
        bin - various helper applications for setting up and maintaining the release directory
 ```
 
-Verfied machines: ultra96-zynqmp zedboard-zynq7
+Verfied machines: qemu-zynq7 zedboard-zynq7
