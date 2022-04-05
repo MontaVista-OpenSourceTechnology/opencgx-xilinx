@@ -72,9 +72,6 @@ for config in $REPO_CONFIG; do
     fi
 done
 
-BUILD_TOOLS_LOCATION=https://github.com/MontaVista-OpenSourceTechnology/buildtools-tarballs/raw/master/
-buildtar=x86_64-buildtools-extended-nativesdk-standalone-3.1.0.sh
-
 export BUILD_TOOLS_LOCATION
 export buildtar
 $TOPDIR/bin/fetch-buildtools || $EXIT 1
