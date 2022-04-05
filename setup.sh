@@ -40,7 +40,6 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=m
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-testsuites \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=master;layer=qemu-bsp \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-perl \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-gnome \
@@ -50,14 +49,13 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=master;layer=meta-xilinx-core \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=master;layer=meta-xilinx-bsp \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=master \
-MACHINE@ultra96-zynqmp \
+MACHINE@qemu-zynq7 \
 DISTRO@mvista-cgx \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista.git;branch=mvl-5.4/msd.cgx;meta=MV_KERNEL \
+CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-xlnx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git;branch=yocto-5.4;meta=MV_KERNELCACHE \
 "
 TOPDIR=$(dirname $THIS_SCRIPT)
@@ -140,6 +138,7 @@ if [ -z "$TEMPLATECONF" -o ! -d "$TEMPLATECONF" ] ; then
 fi
 
 source $TOPDIR/layers/poky/oe-init-build-env $buildDir 
+sed -i -e "s,honister,kirkstone," -e "s,dunfell,kirkstone," $TOPDIR/layers/*/conf/layer.conf $TOPDIR/layers/*/*/conf/layer.conf
 if [ "$?" != "0" ] ; then
    $EXIT 1
 fi
@@ -222,7 +221,7 @@ for config in $REPO_CONFIG; do
           DL_TREE="git://$TOPDIR/sources-export/$(basename $TREE | sed s,.git,,)"
           echo "$(echo $META)_TREE = '$DL_TREE'" >> conf/local-content.conf
           echo "$(echo $META)_BRANCH = '$BRANCH'" >> conf/local-content.conf
-          echo "BB_HASHBASE_WHITELIST_append += \"$(echo $META)_TREE\"" >> conf/local-content.conf
+          echo "BB_BASEHASH_IGNORE_VARS:append = \" $(echo $META)_TREE \"" >> conf/local-content.conf
           echo >> conf/local-content.conf
     fi
     if [ "$VAR" = "CONFIG" ] ; then
