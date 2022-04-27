@@ -54,6 +54,9 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=master;layer=meta-xilinx-bsp \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=master \
 MACHINE@qemu-zynq7 \
+MACHINE@zc706-zynq7 \
+MACHINE@zc702-zynq7 \
+MACHINE@zcu102-zynqmp \
 DISTRO@mvista-cgx \
 CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-xlnx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git;branch=yocto-5.4;meta=MV_KERNELCACHE \
