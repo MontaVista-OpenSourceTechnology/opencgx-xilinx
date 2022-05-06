@@ -51,16 +51,18 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=kir
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=kirkstone-cgx \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl.git;branch=kirkstone-cgx \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-core \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-standalone \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-bsp \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git;branch=kirkstone-cgx \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=kirkstone-cgx \
-MACHINE@qemu-zynq7 \
+MACHINE@zynq-generic \
+MACHINE@zynqmp-generic \
+MACHINE@versal-generic \
+MACHINE@ultra96-zynqmp \
 MACHINE@zc706-zynq7 \
 MACHINE@zc702-zynq7 \
 MACHINE@zcu102-zynqmp \
 DISTRO@mvista-cgx \
 CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-xlnx \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git;branch=yocto-5.4;meta=MV_KERNELCACHE \
 "
 TOPDIR=$(dirname $THIS_SCRIPT)
 buildtar=""
@@ -139,7 +141,7 @@ if [ -z "$TEMPLATECONF" -o ! -d "$TEMPLATECONF" ] ; then
 fi
 
 source $TOPDIR/layers/poky/oe-init-build-env $buildDir 
-sed -i -e "s,honister,kirkstone," -e "s,dunfell,kirkstone," $TOPDIR/layers/*/conf/layer.conf $TOPDIR/layers/*/*/conf/layer.conf
+sed -i -e "s,langdale,kirkstone," -e "s,honister,kirkstone," -e "s,dunfell,kirkstone," $TOPDIR/layers/*/conf/layer.conf $TOPDIR/layers/*/*/conf/layer.conf
 if [ "$?" != "0" ] ; then
    $EXIT 1
 fi
