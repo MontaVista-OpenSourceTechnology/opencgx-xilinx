@@ -54,8 +54,8 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-standalone \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-bsp \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git;branch=kirkstone-cgx \
-MACHINE@zynq-generic \
 MACHINE@zynqmp-generic \
+MACHINE@zynq-generic \
 MACHINE@versal-generic \
 MACHINE@ultra96-zynqmp \
 MACHINE@zc706-zynq7 \
@@ -63,6 +63,7 @@ MACHINE@zc702-zynq7 \
 MACHINE@zcu102-zynqmp \
 DISTRO@mvista-cgx \
 CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-xlnx \
+CONFIG@LICENSE_FLAGS_ACCEPTED:append=xilinx \
 "
 TOPDIR=$(dirname $THIS_SCRIPT)
 buildtar=""
@@ -230,7 +231,11 @@ for config in $REPO_CONFIG; do
     if [ "$VAR" = "CONFIG" ] ; then
        option=$(echo $VAL | cut -d = -f 1)
        setting=$(echo $VAL | cut -d = -f 2)
-       echo "$option ?= '$setting'" >> conf/local-content.conf
+       if [ -z "$(echo $option | grep append)" ] ; then
+          echo "$option ?= '$setting'" >> conf/local-content.conf
+       else
+          echo "$option ?= ' $setting '" >> conf/local-content.conf
+       fi
     fi   
 done
 if [ -n "$SOURCE_MIRROR_URL" ] ; then
