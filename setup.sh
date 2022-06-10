@@ -64,6 +64,7 @@ MACHINE@zcu102-zynqmp \
 DISTRO@mvista-cgx \
 CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-xlnx \
 CONFIG@LICENSE_FLAGS_ACCEPTED:append=xilinx \
+CONFIG@BB_SCHEDULER=completion\
 "
 TOPDIR=$(dirname $THIS_SCRIPT)
 buildtar=""
