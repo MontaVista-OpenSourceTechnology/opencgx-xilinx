@@ -54,6 +54,7 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-standalone \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-bsp \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git;branch=kirkstone-cgx \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=kirkstone-cgx \
 MACHINE@zynqmp-generic \
 MACHINE@zynq-generic \
 MACHINE@versal-generic \
@@ -62,9 +63,10 @@ MACHINE@zc706-zynq7 \
 MACHINE@zc702-zynq7 \
 MACHINE@zcu102-zynqmp \
 DISTRO@mvista-cgx \
-CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-xlnx \
+CONFIG@PREFERRED_PROVIDER_virtual/kernel=linux-mvista \
 CONFIG@LICENSE_FLAGS_ACCEPTED:append=xilinx \
 CONFIG@BB_SCHEDULER=completion \
+CONFIG@MV_KERNEL_BRANCH=mvl-5.10/msd.xilinx
 "
 TOPDIR=$(dirname $THIS_SCRIPT)
 buildtar=""
