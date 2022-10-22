@@ -55,10 +55,10 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx.git;branch=kirkstone-cgx;layer=meta-xilinx-bsp \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-xilinx-tools.git;branch=kirkstone-cgx \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-xilinx.git;branch=kirkstone-cgx \
+MACHINE@ultra96-zynqmp \
 MACHINE@zynqmp-generic \
 MACHINE@zynq-generic \
 MACHINE@versal-generic \
-MACHINE@ultra96-zynqmp \
 MACHINE@zc706-zynq7 \
 MACHINE@zc702-zynq7 \
 MACHINE@zcu102-zynqmp \
